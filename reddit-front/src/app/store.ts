@@ -3,6 +3,7 @@ import {usersReducer} from '../features/User/UserSlice.ts';
 import storage from 'redux-persist/lib/storage';
 import {persistReducer, persistStore} from 'redux-persist';
 import {FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE} from 'redux-persist/es/constants';
+import {postsReducer} from '../features/Posts/PostsSlice.ts';
 
 const usersPersistConfig = {
   key: 'reddit',
@@ -12,6 +13,7 @@ const usersPersistConfig = {
 
 const rootReducer = {
   users: persistReducer(usersPersistConfig, usersReducer),
+  posts: postsReducer,
 }
 
 export const store = configureStore({

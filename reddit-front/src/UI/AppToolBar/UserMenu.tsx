@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Avatar, Menu, MenuItem} from '@mui/material';
+import {Avatar, Button, Menu, MenuItem} from '@mui/material';
 import {User} from '../../types.ts';
 import Box from '@mui/material/Box';
 import {deepPurple} from '@mui/material/colors';
@@ -22,6 +22,8 @@ const UserMenu: React.FC<Props> = ({user}) => {
   }
 
   return (
+    <>
+      <Button variant={'contained'} sx={{marginLeft: 'auto',marginRight: '50px'}}>Add new Post</Button>
     <Box>
       <Avatar onClick={handleClick} sx={{bgcolor: deepPurple[500]}}><PersonIcon/></Avatar>
       <Menu open={isOpen} anchorEl={anchorEl} keepMounted={true} onClose={handleClose}>
@@ -29,6 +31,7 @@ const UserMenu: React.FC<Props> = ({user}) => {
         <MenuItem>My Account {user.username}</MenuItem>
       </Menu>
     </Box>
+      </>
   );
 };
 

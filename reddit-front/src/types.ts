@@ -1,3 +1,32 @@
+export interface Post {
+  _id: string;
+  author: {
+    username: string;
+  };
+  title: string;
+  description: string;
+  image: string | null;
+  datetime: string;
+}
+
+export interface PostMutation {
+  title: string;
+  description: string;
+  image: string | null;
+  datetime: string;
+}
+
+export interface CommentMutation {
+  author: {
+    username: string;
+  };
+  postId: {
+    _id: string;
+  };
+  text: string;
+  createdAt: string;
+}
+
 export interface RegisterMutation {
   username: string;
   password: string;
@@ -30,3 +59,4 @@ export interface ValidationError {
 export interface GlobalError  {
   error: string;
 }
+
