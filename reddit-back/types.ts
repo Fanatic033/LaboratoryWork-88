@@ -13,7 +13,3 @@ export interface UserMethods {
 }
 
 export type UserModel = Model<UserFields, {}, UserMethods>
-
-export interface TrackHistoryFields {
-    datetime: Date;
-}
